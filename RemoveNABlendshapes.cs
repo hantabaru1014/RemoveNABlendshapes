@@ -24,6 +24,7 @@ namespace RemoveNABlendshapes
             {
                 var removeBtn = ui.Button("Remove N/A Blendshapes");
                 removeBtn.LocalPressed += (IButton btn, ButtonEventData data) => RemoveNAshapes(__instance);
+                removeBtn.Slot.ActiveSelf_Field.OverrideForUser(removeBtn.LocalUser, true).Default.Value = false; // Make the button invisible for other users
             }
 
             private static void RemoveNAshapes(SkinnedMeshRenderer instance)
